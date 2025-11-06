@@ -1,0 +1,55 @@
+# Archivos y directorios de VS Code
+
+.vscode/
+
+.DS_Store
+ 
+# Archivos de compilación de Java
+
+*.class
+
+*.jar
+
+*.war
+
+*.ear
+ 
+# Directorio de destino de Maven
+
+target/
+ 
+# Archivos de configuración de Maven
+
+.mvn/
+
+pom.xml.backup
+ 
+# Archivos de IDE
+
+.idea/
+
+*.iml
+
+*.ipr
+
+*.iws
+ 
+# Archivos de sistema operativo
+
+Thumbs.db
+
+*.swp
+ 
+# Archivos de registro
+
+*.log
+ 
+# Archivos temporales
+
+*~
+
+# Otros
+
+.env
+
+ 

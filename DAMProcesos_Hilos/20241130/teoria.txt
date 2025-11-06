@@ -1,0 +1,19 @@
+wait(): Hace que un hilo se bloquee hasta que otro hilo lo despierte. Es útil cuando un hilo necesita esperar una condición (por ejemplo, el consumidor espera que el productor ponga un valor en el buffer).
+
+notify(): Despierta a un hilo que está esperando, indicándole que puede continuar con su tarea. Esto es necesario cuando se modifica el estado del buffer y el otro hilo debe continuar con su acción (por ejemplo, el productor notifica al consumidor que hay un valor disponible).
+
+    *******EJEMPLO:******
+
+    public synchronized int consumir() {
+        while (!disponible) { // disponible == false
+            try {
+                wait(); // Espera si el buffer está vacío
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        disponible = false; // Marca el buffer como vacío
+        System.out.println("Consumido: " + valor);
+        notify(); // Notifica al productor que el buffer está vacío
+        return valor; // Devuelve el valor consumido
+    }
